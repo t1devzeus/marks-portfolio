@@ -1,0 +1,173 @@
+/* Base styles for the body and container */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Navbar styles */
+.nav_bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #333;
+    padding: 10px 20px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Navbar items */
+.nav_bar .items {
+    position: relative;
+    display: flex;
+    align-items: center;
+    color: white;
+    cursor: pointer;
+    padding: 10px 15px;
+    transition: color 0.3s;
+}
+
+/* Hover effect for navbar items */
+.nav_bar .items:hover {
+    color: #ff4081;
+}
+
+/* Navbar items text */
+.nav_bar .items h2 {
+    margin: 0;
+    font-size: 18px;
+}
+
+/* Navbar icons */
+.nav_bar .items svg {
+    margin-left: 8px;
+    fill: white;
+    transition: fill 0.3s;
+}
+
+.nav_bar .items:hover svg {
+    fill: #ff4081;
+}
+
+/* Dropdown menu styles */
+.nav_bar .items .dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #444;
+    padding: 10px 0;
+    min-width: 200px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Dropdown menu items */
+.nav_bar .items .dropdown a {
+    display: block;
+    padding: 10px 20px;
+    color: white;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.nav_bar .items .dropdown a:hover {
+    background-color: #555;
+}
+
+/* Show dropdown on hover */
+.nav_bar .items:hover .dropdown {
+    display: block;
+}
+
+/* Search bar styles */
+.nav_bar .search-container {
+    position: relative;
+}
+
+.nav_bar .search-container input[type="text"] {
+    padding: 7px;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+}
+
+.nav_bar .search-container button {
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 7px;
+    background-color: #ff4081;
+    border: none;
+    color: white;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+}
+
+/* Hamburger Menu */
+.hamburger {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    color: white;
+}
+
+.hamburger svg {
+    fill: white;
+}
+
+/* Responsive navbar */
+@media (max-width: 768px) {
+    .nav_bar {
+        flex-direction: column;
+        align-items: flex-start;
+        display: none; /* Hide the navbar by default */
+    }
+
+    .hamburger {
+        display: block; /* Show the hamburger menu button */
+    }
+
+    .nav_bar.active {
+        display: flex; /* Show the navbar when active */
+    }
+
+    .nav_bar .items {
+        width: 100%;
+        justify-content: space-between;
+        padding: 15px;
+    }
+
+    .nav_bar .items .dropdown {
+        position: static;
+        width: 100%;
+        box-shadow: none;
+    }
+
+    .nav_bar .items .dropdown a {
+        padding: 10px;
+    }
+
+    .nav_bar .search-container {
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    .nav_bar .search-container input[type="text"] {
+        width: calc(100% - 40px);
+    }
+
+    .nav_bar .search-container button {
+        right: 5px;
+        top: 5px;
+    }
+}
