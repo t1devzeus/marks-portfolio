@@ -1,240 +1,327 @@
-/* Base styles for the body and container */
-body {
+/* General Reset */
+* {
     margin: 0;
-    font-family: Arial, sans-serif;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body and Main Container */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #ffffff; /* Main background */
+    color: #333333; /* Text color */
+    line-height: 1.6;
 }
 
 .container {
     max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
+    margin: auto;
+    padding: 20px;
 }
 
-/* Navbar styles */
+/* Hamburger Menu Button */
+.hamburger {
+    display: none; /* Hidden by default */
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 1000; /* Ensure it's on top */
+}
+
+.hamburger svg {
+    fill: #003366;
+    transition: fill 0.3s;
+    width: 24px;
+    height: 24px;
+}
+
+/* Navigation Bar */
 .nav_bar {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: #333;
+    background-color: #ffffff;
     padding: 10px 20px;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    border-radius: 8px; 
-    transition: background-color 0.3s ease-in-out;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 1; /* Make sure it's above other content */
+    border: 1px solid #e0e0e0; /* Subtle border for separation */
 }
 
-/* Navbar items */
-.nav_bar .items {
-    position: relative;
+.nav_bar::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: #003366; /* Primary color accent */
+    border-radius: 4px 4px 0 0;
+}
+
+/* Navigation Items */
+.items {
     display: flex;
     align-items: center;
-    color: white;
-    cursor: pointer;
-    padding: 10px 15px;
-    transition: color 0.3s ease;
-}
-
-.nav_bar .items:hover {
-    color: #ff4081;
-}
-
-/* Navbar items text */
-.nav_bar .items h2 {
     margin: 0;
-    font-size: 18px;
-}
-
-/* Navbar icons */
-.nav_bar .items svg {
-    margin-left: 8px;
-    fill: white;
-    transition: fill 0.3s ease;
-}
-
-.nav_bar .items:hover svg {
-    fill: #ff4081;
-}
-
-/* Dropdown menu styles */
-.nav_bar .items .dropdown {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background-color: #444;
-    padding: 10px 0;
-    min-width: 200px;
-    border-radius: 5px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-/* Dropdown menu items */
-.nav_bar .items .dropdown a {
-    display: block;
-    padding: 10px 20px;
-    color: white;
-    text-decoration: none;
-    transition: background-color 0.3s ease;
-}
-
-.nav_bar .items .dropdown a:hover {
-    background-color: #555;
-}
-
-/* Show dropdown on hover */
-.nav_bar .items:hover .dropdown {
-    display: block;
-}
-
-/* Search bar styles */
-.nav_bar .search-container {
+    padding: 10px 15px;
+    cursor: pointer;
     position: relative;
-}
-
-.nav_bar .search-container input[type="text"] {
-    width: calc(100% - 40px);
-    padding: 7px;
-    border: none;
+    transition: background-color 0.3s, color 0.3s;
     border-radius: 5px;
-    outline: none;
-}
-
-/* Enhanced Search Button Styles */
-.nav_bar .search-container button {
-    position: absolute;
-    right: 0;
-    top: 0;
-    padding: 7px 15px;
-    background-color: #ff4081;
-    background-image: linear-gradient(45deg, #ff4081, #ff6f91);
-    border: none;
-    color: white;
-    border-radius: 0 5px 5px 0;
-    cursor: pointer;
-    transition: background-image 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.nav_bar .search-container button:hover {
-    background-image: linear-gradient(45deg, #ff6f91, #ff4081);
-    transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-.nav_bar .search-container button:active {
-    transform: translateY(0);
-    box-shadow: none;
-}
-
-/* Enhanced Hamburger Menu Styles */
-.hamburger {
-    display: none;
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 10px;
-    color: white;
-    position: absolute;
-    right: 20px; 
-    top: 10px;
-    z-index: 1100;
-    transition: color 0.3s ease;
-}
-
-.hamburger svg {
-    fill: white;
-    transition: fill 0.3s ease;
-}
-
-.hamburger:hover {
-    color: #ff4081;
-}
-
-.hamburger:hover svg {
-    fill: #ff4081;
-}
-
-/* About Section Styles */
-.about {
-    padding: 60px 20px;
-    background-color: #f9f9f9;
-    border-radius: 8px; 
-    margin-top: 20px;
+    min-width: 120px;
     text-align: center;
 }
 
-.about h1 {
-    font-size: 32px;
-    margin-bottom: 20px;
-    color: #333;
-}
-
-.about p {
+.items h2 {
+    margin: 0;
     font-size: 18px;
-    line-height: 1.6;
-    color: #666;
-    margin-bottom: 20px;
+    color: #003366; /* Primary color */
+    transition: color 0.3s;
+    font-weight: 600;
 }
 
-/* Responsive About Section */
-@media (max-width: 768px) {
-    .about {
-        padding: 30px 15px;
-    }
-
-    .about h1 {
-        font-size: 28px;
-    }
-
-    .about p {
-        font-size: 16px;
-    }
+.items svg {
+    margin-left: 8px;
+    fill: #003366;
+    transition: fill 0.3s;
 }
 
-/* Responsive navbar */
+/* Hover and Active States */
+.items:hover, .items.active {
+    background-color: #e6f9f9; /* Light teal background for hover */
+    color: #008080; /* Accent color text */
+}
+
+.items:hover h2, .items.active h2 {
+    color: #008080; /* Accent color */
+}
+
+.items:hover svg, .items.active svg {
+    fill: #008080; /* Accent color */
+}
+
+/* Responsive Design */
 @media (max-width: 768px) {
     .nav_bar {
         flex-direction: column;
         align-items: flex-start;
-        display: none;
-        border-radius: 0; 
     }
-
+    
     .hamburger {
-        display: block;
+        display: block; /* Show hamburger menu on small screens */
     }
-
-    .nav_bar.active {
-        display: flex; 
-    }
-
+    
     .nav_bar .items {
+        display: none; /* Hide items by default */
         width: 100%;
-        justify-content: space-between;
-        padding: 15px;
+        padding: 0;
+    }
+    
+    .nav_bar.show .items {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+/* About Section */
+#about {
+    margin-top: 20px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#about h1 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    color: #003366; /* Primary color */
+}
+
+#about p {
+    margin-bottom: 15px;
+    font-size: 16px;
+    color: #666666; /* Darker text for readability */
+}
+
+/* Experience Section */
+#experience {
+    margin-top: 20px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#experience h1 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    color: #003366; /* Primary color */
+}
+
+#experience p {
+    margin-bottom: 15px;
+    font-size: 16px;
+    color: #666666; /* Darker text for readability */
+}
+
+/* Buttons */
+button {
+    background-color: #008080; /* Accent color */
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+button:hover {
+    background-color: #006666; /* Darker shade of accent color */
+}
+
+button:active {
+    transform: scale(0.98); /* Slight press effect */
+}
+
+/* Forms */
+input, textarea {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 16px;
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 15px;
+}
+
+input:focus, textarea:focus {
+    border-color: #008080; /* Accent color border */
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 128, 128, 0.2); /* Light shadow effect */
+}
+
+/* Links */
+a {
+    color: #003366; /* Primary color */
+    text-decoration: none;
+}
+
+a:hover {
+    color: #008080; /* Accent color */
+    text-decoration: underline;
+}
+
+/* Cards */
+.card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #ffffff;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+    transform: scale(1.02); /* Slight zoom effect */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Tables */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+th, td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+th {
+    background-color: #003366; /* Primary color */
+    color: #ffffff;
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9; /* Alternating row colors */
+}
+
+tr:hover {
+    background-color: #e6f9f9; /* Light teal background for hover */
+}
+
+/* Alerts */
+.alert {
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    color: #ffffff;
+}
+
+.alert.success {
+    background-color: #28a745; /* Green for success */
+}
+
+.alert.error {
+    background-color: #dc3545; /* Red for error */
+}
+
+.alert.warning {
+    background-color: #ffc107; /* Yellow for warning */
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.fade-in {
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.slide-in {
+    animation: slideIn 0.5s ease-out;
+}
+
+/* Media Queries for Larger Screens */
+@media (min-width: 1200px) {
+    .container {
+        padding: 40px;
     }
 
-    .nav_bar .items .dropdown {
-        position: static;
-        width: 100%;
-        box-shadow: none;
+    .items {
+        min-width: 150px; /* Increase button size on larger screens */
     }
 
-    .nav_bar .items .dropdown a {
-        padding: 10px;
-    }
-
-    .nav_bar .search-container {
-        width: 100%;
-        margin-top: 10px;
-    }
-
-    .nav_bar .search-container input[type="text"] {
-        width: calc(100% - 40px);
-    }
-
-    .nav_bar .search-container button {
-        right: 5px;
-        top: 5px;
+    button {
+        padding: 12px 24px;
+        font-size: 18px;
     }
 }
