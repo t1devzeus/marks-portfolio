@@ -19,25 +19,6 @@ body {
     padding: 20px;
 }
 
-/* Hamburger Menu Button */
-.hamburger {
-    display: none; /* Hidden by default */
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    background: none;
-    border: none;
-    cursor: pointer;
-    z-index: 1000; /* Ensure it's on top */
-}
-
-.hamburger svg {
-    fill: #003366;
-    transition: fill 0.3s;
-    width: 24px;
-    height: 24px;
-}
-
 /* Navigation Bar */
 .nav_bar {
     display: flex;
@@ -308,20 +289,4 @@ tr:hover {
 
 .slide-in {
     animation: slideIn 0.5s ease-out;
-}
-
-/* Media Queries for Larger Screens */
-@media (min-width: 1200px) {
-    .container {
-        padding: 40px;
-    }
-
-    .items {
-        min-width: 150px; /* Increase button size on larger screens */
-    }
-
-    button {
-        padding: 12px 24px;
-        font-size: 18px;
-    }
 }
