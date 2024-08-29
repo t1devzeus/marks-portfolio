@@ -1,3 +1,10 @@
+/* Font size variables */
+:root {
+    --font-size-title: 32px;
+    --font-size-body: 18px;
+    --font-size-small: 14px;
+}
+
 /* Reset */
 * {
     margin: 0;
@@ -11,12 +18,25 @@ body {
     background-color: #ffffff;
     color: #333333;
     line-height: 1.6;
+    font-size: var(--font-size-body);
 }
 
 .container {
     max-width: 1200px;
     margin: auto;
     padding: 20px;
+}
+
+/* Headings */
+h1, .title {
+    font-size: var(--font-size-title); 
+    font-weight: bold;
+    color: #003366;
+}
+
+p {
+    font-size: var(--font-size-small);
+    color: #666666;
 }
 
 /* Navigation Bar */
@@ -72,7 +92,7 @@ body {
 
 .items h2 {
     margin: 0;
-    font-size: 18px;
+    font-size: var(--font-size-body); 
     color: #003366;
     transition: color 0.3s;
     font-weight: 600;
@@ -133,14 +153,14 @@ body {
 }
 
 #about h1 {
-    font-size: 24px;
+    font-size: var(--font-size-title);
     margin-bottom: 15px;
     color: #003366;
 }
 
 #about p {
+    font-size: var(--font-size-small); 
     margin-bottom: 15px;
-    font-size: 16px;
     color: #666666;
 }
 
@@ -155,14 +175,14 @@ body {
 }
 
 #experience h1 {
-    font-size: 24px;
+    font-size: var(--font-size-title);
     margin-bottom: 15px;
     color: #003366;
 }
 
 #experience p {
+    font-size: var(--font-size-small); 
     margin-bottom: 15px;
-    font-size: 16px;
     color: #666666;
 }
 
