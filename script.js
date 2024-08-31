@@ -1,3 +1,9 @@
+// Blender Docs / See more button
+document.querySelector('.blender_docs').addEventListener('click', function (e) {
+    e.preventDefault();
+    window.location.href = "https://docs.blender.org/";
+})
+
 // Smooth scrolling for About link
 document.querySelector('.about-link').addEventListener('click', function (e) {
     e.preventDefault();
