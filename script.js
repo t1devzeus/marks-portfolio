@@ -4,6 +4,12 @@ document.querySelector('.blender_docs').addEventListener('click', function (e) {
     window.location.href = "https://docs.blender.org/";
 })
 
+// C# Docs / See more button
+document.querySelector('.cSharp_docs').addEventListener('click', function (e) {
+    e.preventDefault();
+    window.location.href = "https://learn.microsoft.com/en-us/dotnet/csharp/tour-of-csharp/";
+})
+
 // Smooth scrolling for About link
 document.querySelector('.about-link').addEventListener('click', function (e) {
     e.preventDefault();
