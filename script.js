@@ -10,6 +10,12 @@ document.querySelector('.cSharp_docs').addEventListener('click', function (e) {
     window.location.href = "https://learn.microsoft.com/en-us/dotnet/csharp/tour-of-csharp/";
 })
 
+// Projects btn
+document.querySelector('.projects').addEventListener('click', function (e) {
+    e.preventDefault();
+    window.location.href = "./projects/"
+})
+
 // Smooth scrolling for About link
 document.querySelector('.about-link').addEventListener('click', function (e) {
     e.preventDefault();
