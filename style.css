@@ -395,6 +395,31 @@ tr:hover {
     font-family: 'Cascadia Code', sans-serif;
 }
 
+.copyright {
+    color: white;
+    text-align: center;
+    padding: 20px;
+    position: absolute;
+    bottom: 100;
+    left: 0%;
+    width: 100%;
+}
+  
+.copyright h1 {
+    font-size: 16px;
+    margin: 5px 0;
+}
+  
+.copyright a {
+    color: #6E5BBB;
+    text-decoration: none;
+}
+  
+.copyright a:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
 /* Animations */
 @keyframes fadeIn {
     from {
