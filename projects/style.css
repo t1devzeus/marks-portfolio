@@ -18,14 +18,17 @@ body {
 
 .back__btn {
     border-radius: .25rem;
-    background-color: --color;
-    color: #F3F3F3;
+    background-color: linear-gradient(0deg, transparent 24%, var(--color) 25%, var(--color) 26%, transparent 27%,transparent 74%, var(--color) 75%, var(--color) 76%, transparent 77%,transparent),
+        linear-gradient(90deg, transparent 24%, var(--color) 25%, var(--color) 26%, transparent 27%,transparent 74%, var(--color) 75%, var(--color) 76%, transparent 77%,transparent);
+    color: #bbbbbb;
     cursor: crosshair;
     margin: 25px;
+    font-size: 10px;
 }
 
 .back__btn:hover {
     animation: expand forwards .25s;
+    box-shadow: inset 21px 34px -12px rgba(0,0,0,0.75);
 }
 
 .card {
@@ -78,6 +81,10 @@ body {
     transform: scale(1.05);
     box-shadow: 0 8px 16px rgba(255, 255, 255, 0.2);
     cursor: crosshair;
+    -webkit-box-shadow: 25px 21px 34px -12px rgba(0,0,0,0.75);
+        -moz-box-shadow: 25px 21px 34px -12px rgba(0,0,0,0.75);
+        box-shadow: 25px 21px 34px -12px rgba(0,0,0,0.75);
+    outline: solid;
 }
 
 .card:hover .card__content {
@@ -88,7 +95,7 @@ body {
 .card__title {
     margin: 0;
     font-size: 24px;
-    color: #fff; 
+    color: #bbbbbb; 
     font-weight: 700;
     cursor: crosshair;
 }
@@ -96,7 +103,7 @@ body {
 .card__description {
     margin: 10px 0 0;
     font-size: 16.5px;
-    color: #ddd;
+    color: #bbbbbb;
     line-height: 1.4;
     text-align: center; 
     cursor: crosshair;
