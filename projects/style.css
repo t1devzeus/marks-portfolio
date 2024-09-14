@@ -1,5 +1,7 @@
+@import url('https://fonts.cdnfonts.com/css/cascadia-code');
+
 * {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Cascadia Code', sans-serif;
     cursor: crosshair;
 }
 
@@ -11,13 +13,26 @@ body {
     background-image: linear-gradient(0deg, transparent 24%, var(--color) 25%, var(--color) 26%, transparent 27%,transparent 74%, var(--color) 75%, var(--color) 76%, transparent 77%,transparent),
         linear-gradient(90deg, transparent 24%, var(--color) 25%, var(--color) 26%, transparent 27%,transparent 74%, var(--color) 75%, var(--color) 76%, transparent 77%,transparent);
     background-size: 55px 55px;
+    cursor: crosshair;
+}
+
+.back__btn {
+    border-radius: .25rem;
+    background-color: --color;
+    color: #F3F3F3;
+    cursor: crosshair;
+    margin: 25px;
+}
+
+.back__btn:hover {
+    animation: expand forwards .25s;
 }
 
 .card {
     position: relative;
     width: 300px;
     height: 200px;
-    background-color: rgb(49, 49, 83);
+    background-color: --color;
     border-radius: 10px;
     display: flex;
     align-items: center;
@@ -27,6 +42,7 @@ body {
     box-shadow: 0 0 0 5px #ffffff80;
     transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     margin: 20px auto; 
+    cursor: crosshair;
 }
 
 .card__logo {
@@ -35,7 +51,8 @@ body {
     border-radius: 50%;
     object-fit: cover;
     margin-bottom: 10px;
-    border: 2px solid #fff; 
+    border: 2px solid #fff;
+    cursor: crosshair;
 }
 
 .card__content {
@@ -46,7 +63,7 @@ body {
     height: 100%;
     padding: 20px;
     box-sizing: border-box;
-    background-color: rgb(49, 49, 83); 
+    background-color: #F3F3F3; 
     transform: rotateX(-90deg);
     transform-origin: bottom;
     transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
@@ -54,15 +71,18 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    cursor: crosshair;
 }
 
 .card:hover {
     transform: scale(1.05);
     box-shadow: 0 8px 16px rgba(255, 255, 255, 0.2);
+    cursor: crosshair;
 }
 
 .card:hover .card__content {
     transform: rotateX(0deg);
+    cursor: crosshair;
 }
 
 .card__title {
@@ -70,6 +90,7 @@ body {
     font-size: 24px;
     color: #fff; 
     font-weight: 700;
+    cursor: crosshair;
 }
 
 .card__description {
@@ -78,4 +99,18 @@ body {
     color: #ddd;
     line-height: 1.4;
     text-align: center; 
+    cursor: crosshair;
+}
+
+@keyframes expand {
+    from {
+        transform: scale(1);
+    }
+
+    to {
+        transform: scale(1.2);
+        -webkit-box-shadow: 25px 21px 34px -12px rgba(0,0,0,0.75);
+        -moz-box-shadow: 25px 21px 34px -12px rgba(0,0,0,0.75);
+        box-shadow: 25px 21px 34px -12px rgba(0,0,0,0.75);
+    }
 }
